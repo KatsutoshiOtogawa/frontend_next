@@ -32,7 +32,7 @@ jobs:
     - name: build source code
       run: npm run build --if-present
     - name: export static files
-      run: npm export
+      run: npm run export
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
