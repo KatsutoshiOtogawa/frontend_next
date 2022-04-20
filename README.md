@@ -64,3 +64,7 @@ typescriptは
 jsdoc形式でコメントを書くことによりvscodeのインテリセンスを効かせるという形で
 運用してください。
 いちいちtsのビルドを考えなくて良くなります。
+
+## 参考
+
+[github action for github page](https://github.com/marketplace/actions/github-pages-action)
