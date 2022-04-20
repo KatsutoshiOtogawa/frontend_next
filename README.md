@@ -32,3 +32,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 使い方
+
+### 環境構築
+
+予めmkcertとnpmはインストールしておく。
+
+```bash
+# プロジェクト配下
+npm install
+
+# local用のssl証明書インストール
+npm run keys:init
+
+# build
+npm run build
+
+# export
+npm run export
+
+# exportした静的ファイル上で
+npm run local:server
+```
+
+### ts
+
+typescriptは
+ファイルの先頭に
+//@ts-checkとすることでtypescriptのチェックを有効にして
+jsdoc形式でコメントを書くことによりvscodeのインテリセンスを効かせるという形で
+運用してください。
+いちいちtsのビルドを考えなくて良くなります。
