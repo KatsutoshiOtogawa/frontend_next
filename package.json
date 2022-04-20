@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "keys:init": "mkcert --install",
+    "keys:local": "cd keys && mkcert 127.0.0.1",
+    "server:local": "cd out && http-server --cors --ssl --key ../keys/127.0.0.1-key.pem --cert ../keys/127.0.0.1.pem",
     "lint": "next lint",
     "export": "next export"
   },
@@ -15,7 +18,12 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^16.11.7",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "http-server": "^14.1.0"
   }
 }
