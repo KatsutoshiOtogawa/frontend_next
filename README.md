@@ -35,6 +35,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 使い方
 
+### version
+
+vercelがnode14,12しか対応していないため、
+14になります。
+
 ### 環境構築
 
 予めmkcertとnpmはインストールしておく。
