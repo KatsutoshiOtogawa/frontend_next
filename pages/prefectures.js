@@ -50,15 +50,13 @@ export default function Prefectures() {
   const options = {
     method: 'GET',
     headers: { 
-      // 'X-API-KEY': process.env.PREFECUTRE_API_KEY
     },
   }
 
-  const api_url = process.env.API_URL
   React.useEffect(() => {
 
     (async function() {
-      const response = await fetch(api_url, options);
+      const response = await fetch(process.env.API_URL, options);
 
       if (response.status != 200) {
         console.error('fetch failed');
