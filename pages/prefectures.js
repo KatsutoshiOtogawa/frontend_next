@@ -1,13 +1,11 @@
 // @ts-check
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { useDebugValue } from 'react';
+import React from 'react';
 // next exportでは使えないので変更
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Prefecture } from '../components/Prefecture'
-
-import { useSession } from "next-auth/react"
 
 /**
  * @typedef {Object} Props - Prefectureのprops
@@ -94,10 +92,10 @@ export default function Prefectures() {
     {
       
     data.result.map((value) => {
-      return (<>
+      <>
       <li>{value.prefCode}</li>
       <li>{value.prefName}</li>
-      </>)
+      </>
     })
     }
     <p>
