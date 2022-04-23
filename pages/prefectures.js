@@ -83,6 +83,8 @@ export default function Prefectures() {
 //   const listItems = numbers.map((number) =>
 //   <li>{number}</li>
 // );
+
+  console.log(data)
   return (
     <>
     {
