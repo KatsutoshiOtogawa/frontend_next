@@ -47,18 +47,18 @@ export default function Prefectures() {
   /** @type { React.Dispatch<React.SetStateAction<PrefectureJson>>} */
   let setData
   [data, setData] = React.useState(data);
-  const options = {
-    method: 'GET',
-    headers: { 
-      'Origin': process.env.API_URL
-    },
-  }
 
   React.useEffect(() => {
 
     (async function() {
-      const response = await fetch(process.env.API_URL, options);
+      const options = {
+        method: 'GET',
+        headers: { 
+        },
+      }
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL, options);
 
+      console.log(process.env.NEXT_PUBLIC_API_URL)
       if (response.status != 200) {
         console.error('fetch failed');
         console.error(await response.text())
@@ -86,7 +86,7 @@ export default function Prefectures() {
 // );
   return (
     <>
-    <Prefecture />
+    {/* <Prefecture /> */}
     {
       
     data.result.forEach((value) => {
