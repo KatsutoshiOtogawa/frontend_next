@@ -85,14 +85,17 @@ export default function Prefectures() {
 // );
   return (
     <>
+    {
+      data.result
+    }
     {/* <Prefecture /> */}
     {
       
     data.result.map((value) => {
-      <>
+      return (<>
       <li>{value.prefCode}</li>
       <li>{value.prefName}</li>
-      </>
+      </>)
     })
     }
     <p>
