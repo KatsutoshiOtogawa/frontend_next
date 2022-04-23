@@ -61,6 +61,7 @@ export default function Prefectures() {
 
       if (response.status != 200) {
         console.error('fetch failed');
+        console.error(await response.text())
         return;
       }
       /** @type {PrefectureJson} */

@@ -5,8 +5,7 @@ import { SessionProvider } from "next-auth/react"
 
 /**
  * 
- * @param {{Component: any; pageProps: any} param0 
- * @returns 
+ * @param {{Component: any; pageProps: any}} param0
  */
 function MyApp({ Component, pageProps }) {
   // return (
