@@ -50,10 +50,13 @@ export default function Prefectures() {
   const options = {
     method: 'GET',
     headers: { 
-      'X-API-KEY': process.env.PREFECUTRE_API_KEY
+      // 'X-API-KEY': process.env.PREFECUTRE_API_KEY
     },
   }
-  const api_url = "https://opendata.resas-portal.go.jp/api/v1/prefectures"
+
+  const API_URL = "https://asia-northeast2-github-for-personal-build.cloudfunctions.net/resas_prefecture"
+
+  const api_url = process.env.API_URL
   React.useEffect(() => {
 
     (async function() {
