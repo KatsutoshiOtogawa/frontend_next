@@ -58,7 +58,6 @@ export default function Prefectures() {
       }
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL, options);
 
-      console.log(process.env.NEXT_PUBLIC_API_URL)
       if (response.status != 200) {
         console.error('fetch failed');
         console.error(await response.text())
@@ -89,7 +88,7 @@ export default function Prefectures() {
     {/* <Prefecture /> */}
     {
       
-    data.result.forEach((value) => {
+    data.result.map((value) => {
       <>
       <li>{value.prefCode}</li>
       <li>{value.prefName}</li>
