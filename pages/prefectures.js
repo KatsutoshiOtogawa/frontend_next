@@ -50,6 +50,7 @@ export default function Prefectures() {
   const options = {
     method: 'GET',
     headers: { 
+      'Origin': process.env.API_URL
     },
   }
 
