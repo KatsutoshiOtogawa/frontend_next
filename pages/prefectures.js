@@ -54,8 +54,6 @@ export default function Prefectures() {
     },
   }
 
-  const API_URL = "https://asia-northeast2-github-for-personal-build.cloudfunctions.net/resas_prefecture"
-
   const api_url = process.env.API_URL
   React.useEffect(() => {
 
