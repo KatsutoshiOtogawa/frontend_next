@@ -30,6 +30,7 @@ import { Prefecture } from '../components/Prefecture'
  */
 export default function Prefectures() {
 
+  // nextのコンパイラが変数を一度初期化しないとプロパティがあるか判断できないので、初期化。
   /** @type {PrefectureJson} */
   let data = {
     message: null,
@@ -69,7 +70,6 @@ export default function Prefectures() {
     // useEffectを一回だけ使いたいけど、eslinterのエラーが出るのでそれを消すために使う。
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  // build時に一緒に値を出してしまう.
   return (
     <>
       {

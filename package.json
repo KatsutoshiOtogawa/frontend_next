@@ -11,16 +11,18 @@
     "start": "next start",
     "keys:init": "mkcert --install",
     "keys:local": "cd keys && mkcert 127.0.0.1",
-    "server:local": "cd out && http-server --cors --ssl --key ../keys/127.0.0.1-key.pem --cert ../keys/127.0.0.1.pem",
+    "server:local": "cd out && http-server --cors --port 443 --ssl --key ../keys/127.0.0.1-key.pem --cert ../keys/127.0.0.1.pem",
     "lint": "next lint",
     "export": "next export"
   },
   "dependencies": {
+    "chart.js": "^3.7.1",
     "next": "12.1.5",
     "next-auth": "^4.3.3",
     "node-fetch": "^3.2.3",
     "nodemailer": "^6.7.3",
     "react": "18.0.0",
+    "react-chartjs-2": "^4.1.0",
     "react-dom": "18.0.0"
   },
   "devDependencies": {

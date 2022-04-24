@@ -14,8 +14,7 @@ export function Prefecture({prefCode, prefName}) {
   return (
 
     <>
-        <li>{prefCode}</li>
-        <li>{prefName}</li>
+        <input type="checkbox" name={prefName}></input>
     </>
   );
 }
