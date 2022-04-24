@@ -59,8 +59,8 @@ jobs:
         destination: 'for_github_next'
 
     # Example of using the output
-    - id: 'uploaded-files'
-      uses: 'foo/bar@main'
-      env:
-        files: '${{ steps.upload-folder.outputs.uploaded }}'
+    # - id: 'uploaded-files'
+    #   uses: 'foo/bar@main'
+    #   env:
+    #     files: '${{ steps.upload-folder.outputs.uploaded }}'
     # - run: npm test
