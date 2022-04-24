@@ -38,7 +38,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
-  job_id:
+  gcp:
+    needs: [build]
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
