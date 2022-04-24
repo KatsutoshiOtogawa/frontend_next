@@ -39,6 +39,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
   job_id:
+    runs-on: ubuntu-latest
     permissions:
       contents: 'read'
       id-token: 'write'
