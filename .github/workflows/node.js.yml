@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     permissions:
@@ -36,11 +35,11 @@ jobs:
       run: npm run build --if-present
     - name: export static files
       run: npm run export
-    - name: Deploy github page
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
+    # - name: Deploy github page
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./out
 
     - id: 'gcp_auth'
       name: gcp auth
@@ -49,8 +48,8 @@ jobs:
         workload_identity_provider: 'projects/93898855020/locations/global/workloadIdentityPools/forgithubactionid/providers/githubid'
         service_account: 'compute-engine-for-github@github-for-personal-build.iam.gserviceaccount.com'
 
-    - id: 'upload-forlder_to_gcs'
-      name: 'upload-forlder to gcs'
+    - id: 'main_upload-forlder_to_gcs'
+      name: '(main) upload-forlder to gcs'
       uses: 'google-github-actions/upload-cloud-storage@v0'
       with:
         path: './out'
