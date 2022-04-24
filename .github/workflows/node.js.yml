@@ -54,7 +54,8 @@ jobs:
       with:
         path: './out'
         # gcsを独自ドメインで置くなら、書いておくこと。
-        destination: 'fjwrjkvjdvdj.de'
+        # バスケットは他の人含めてグローバルで一意なのでと同じ名前が無いか確認する必要がある。
+        destination: 'www.fjwrjkvjdvdj.de'
 
     # Example of using the output
     # - id: 'uploaded-files'
