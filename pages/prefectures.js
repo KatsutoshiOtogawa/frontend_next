@@ -30,10 +30,54 @@ import { Prefecture } from '../components/Prefecture'
  */
 export default function Prefectures() {
 
+  /** @type {PrefectureJson} */
+  let data = {
+    message: null,
+    result: [
+      {
+        prefCode: null,
+        prefName: null
+      }
+    ]
+  };
+
+  /** @type { React.Dispatch<React.SetStateAction<PrefectureJson>>} */
+  let setData
+  [data, setData] = React.useState(data);
+
+  React.useEffect(() => {
+
+    (async () => {
+      const options = {
+        method: 'GET',
+        headers: { 
+        },
+      }
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL, options);
+
+      if (response.status != 200) {
+        console.error('fetch failed');
+        console.error(await response.text())
+        return;
+      }
+      /** @type {PrefectureJson} */
+      const json = await response.json()
+
+      setData(json);
+
+    })();
+    // useEffectを一回だけ使いたいけど、eslinterのエラーが出るのでそれを消すために使う。
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   // build時に一緒に値を出してしまう.
   return (
     <>
-    <Prefecture />
+      {
+
+        data.result.map((value) => {
+          return  <Prefecture key={value.prefCode} prefName={value.prefName} prefCode={value.prefCode} />
+        })
+      }
 
     <p>
       HelloWorld
