@@ -45,7 +45,7 @@ export function Prefecture({data}) {
 
   React.useEffect(() => {
 
-    async () => {
+    (async () => {
       const options = {
         method: 'GET',
         headers: { 
@@ -63,7 +63,7 @@ export function Prefecture({data}) {
 
       setData(json);
 
-    };
+    })();
     // useEffectを一回だけ使いたいけど、eslinterのエラーが出るのでそれを消すために使う。
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
@@ -87,7 +87,7 @@ export async function getStaticProps(context) {
   /** @type {PrefectureJson} */
   let data;
 
-  async () => {
+  data = await (async () => {
     const options = {
       method: 'GET',
       headers: { 
@@ -100,8 +100,8 @@ export async function getStaticProps(context) {
       console.error(await response.text())
       return;
     }
-    data = await response.json();
-  };
+    return await response.json();
+  })();
 
   return {
     props: {
